@@ -1,0 +1,125 @@
+\documentclass[11pt]{amsart}
+
+\usepackage{macros,amsaddr,physics}
+
+\addbibresource{fact3d.bib}
+
+\renewcommand{\op}{\operatorname}
+\newcommand{\RS}{\cR \cS}
+\newcommand{\penrose}{\slashed{P}}
+
+%\linespread{1.2} %for editing
+%\usepackage{mathpazo}
+
+\begin{document}
+
+\title{Localization for factorization algebras in three dimensions}
+\maketitle
+
+Let $\op{Fact}_{\cN=4}^{suco}$ be the category of $\cN=4$ superconformal factorization algebras on~$\R^3$.
+
+\begin{thm}
+This construction defines a (adjectives) functor
+\beqn
+\op{Fact}_{\cN=4}^{suco} \to \op{Alg} 
+\eeqn
+from the category of $\cN=4$ superconformal factorization algebras to the category of associative (really $A_\infty$) algebras.
+\end{thm}
+
+\section{Supersymmetric structures on factorization algebras}
+
+\subsection{Supersymmetric stress tensors as local Lie algebras}
+
+I want to upgrade \cite[section 4]{DumiSeiberg} to local Lie algebras.
+They only do $\cN=2$, but we should be able to just reduce their description of $\cN=4$ in four dimensions.
+
+Let $\lie{S}_{\cN=2}$ be the local super Lie algebra underlying the $\cN=2$ stress tensor.
+Let $\lie{R}_{\cN=2}$ be the local super Lie algebra underlying the $\cN=2$ $R$-symmetry multiplet.
+Let $\lie{J}_{\cN=2}$ be the local super Lie algebra underlying the $\cN=2$ superconformal multiplet.
+These local Lie algebras are defined on the site of spin Riemannian three-manifolds.
+
+Let $\lie{J}_{\cN=2}$ be the following complex of super vector bundles on the site of three-dimensional Riemannian spin manifolds:
+\begin{equation}
+    \begin{tikzcd}
+        & 0 & 1 \\ \hline
+        even &C^\infty \ar[r,"\d"] &  \Omega^1 \\
+        even & \Vect \ar[r,"L_{(-)} g"] & \Gamma\left(\Sym^2(\T^*)_0\right) \\
+        odd & \Gamma(\cS) \ar[r,"\penrose"] & \Gamma(\RS) 
+    \end{tikzcd}
+\end{equation}
+
+\begin{lem}
+\label{lem:lieN=2}
+There are maps of local super Lie algebras
+\beqn
+\lie{S}_{\cN=2} \to \lie{R}_{\cN=2} \to \lie{J}_{\cN=2} .
+\eeqn
+\end{lem}
+
+\subsection{Supersymmetry for factorization algebras}
+
+\begin{dfn}
+Let $\cF$ be a factorization algebra defined on the site of three-dimensional Riemannian spin manifolds.
+\begin{itemize}
+\item A $\cN=2$ \defterm{supersymmetric structure} on $\cF$ is a map of factorization algebras
+\beqn
+\UU \lie{S}_{\cN=2} \to \cF .
+\eeqn
+\item A $\cN=2$ \defterm{supersymmetric structure with $R$-symmetry} on $\cF$ is a map of factorization algebras
+\beqn
+\UU \lie{R}_{\cN=2} \to \cF .
+\eeqn
+\item A $\cN=2$ \defterm{superconformal structure} on $\cF$ is a map of factorization algebras
+\beqn
+\UU \lie{J}_{\cN=2} \to \cF .
+\eeqn
+\end{itemize}
+\end{dfn}
+
+From lemma \ref{lem:lieN=2}, and functoriality of the factorization enveloping algebra, we see that any $\cN=2$ superconformal structure induces a $\cN=2$ supersymmetric structure with $R$-symmetry.
+Likewise, by forgetting the $R$-symmetry any $\cN=2$ supersymmetric structure with $R$-symmetry induces a $\cN=2$ supersymmetric structure.
+
+\section{The $HT$ twist}
+
+Let $Q_{HT}$ be a holomorphic-topological supercharge associated to a THF structure.
+
+\begin{thm}
+There is a quasi-isomorphism of local Lie algebras on the site of THF manifolds
+\beqn
+\left(\lie{J}_{\cN=2}\right)^{Q_{HT}} \simeq \cA^\bu(\T) 
+\eeqn
+\end{thm}
+
+Let $\T^{1|1}$ be the following complex of THF vector bundles
+\beqn
+\begin{tikzcd}
+\ul{-1} & \ul{0} & \ul{1} \\
+\cO_{f'} & \T_X & \T_{X'} \\
+& \cO_{f} & .
+\end{tikzcd}
+\eeqn
+We will denote sections in the top line by $(f, X, X')$ and sections in the bottom line by $f'$.
+This complex of sheaves has the structure of a Lie algebra with brackets defined by
+\begin{itemize}
+\item The vector fields $X$ in degree zero act on all other sections via the Lie derivative.
+\item For $f' \in \cO$ of degree zero we have
+\beqn
+[f', f] = - f' f , \quad [f',X'] = f' X' .
+\eeqn
+\item Finally, there is the bracket
+\beqn
+[X',f] = (X' \cdot f)_{f'} + (f X')_{X} .
+\eeqn
+\end{itemize}
+These brackets endow $\cA^\bu(\T^{1|1})$ with the structure of a local Lie algebra.
+
+\begin{thm}
+There is a quasi-isomorphism of local Lie algebras on the site of THF manifolds
+\beqn
+\left(\lie{J}_{\cN=4}\right)^{Q_{HT}} \simeq \cA^\bu(\T^{1|1}) . 
+\eeqn
+\end{thm}
+
+\printbibliography
+
+\end{document}
