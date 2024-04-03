@@ -16,6 +16,11 @@
 \title{Localization for factorization algebras in three dimensions}
 \maketitle
 
+\section{Introduction}
+
+
+
+
 Let $\op{Fact}_{\cN=4}^{suco}$ be the category of $\cN=4$ superconformal factorization algebras on~$\R^3$.
 
 \begin{thm}
@@ -25,6 +30,8 @@ This construction defines a (adjectives) functor
 \eeqn
 from the category of $\cN=4$ superconformal factorization algebras to the category of associative (really $A_\infty$) algebras.
 \end{thm}
+
+\brian{Maybe we have our main result for just the $R$-symmetry version of $\cN=4$. Let's see....}
 
 \section{Supersymmetric structures on factorization algebras}
 
@@ -42,9 +49,9 @@ Let $\lie{J}_{\cN=2}$ be the following complex of super vector bundles on the si
 \begin{equation}
     \begin{tikzcd}
         & 0 & 1 \\ \hline
-        even &C^\infty \ar[r,"\d"] &  \Omega^1 \\
-        even & \Vect \ar[r,"L_{(-)} g"] & \Gamma\left(\Sym^2(\T^*)_0\right) \\
-        odd & \Gamma(\cS) \ar[r,"\penrose"] & \Gamma(\RS) 
+        even &C^\infty \ar[r,"\d"] &  \Omega^1_j \\
+        even & \Vect \ar[r,"L_{(-)} g"] & \Gamma\left(\Sym^2(\T^*)_0\right)_{T} \\
+        odd & \Gamma(\cS \otimes \C^2) \ar[r,"\penrose"] & \Gamma(\RS \otimes \C^2)_{\psi}
     \end{tikzcd}
 \end{equation}
 
@@ -55,6 +62,18 @@ There are maps of local super Lie algebras
 \lie{S}_{\cN=2} \to \lie{R}_{\cN=2} \to \lie{J}_{\cN=2} .
 \eeqn
 \end{lem}
+
+Let $\lie{R}_{\cN=2}$ be the following complex of super vector bundles on the site of three-dimensional Riemannian spin manifolds:
+\begin{equation}
+    \begin{tikzcd}
+        & 0 & 1 \\ \hline
+        even &C^\infty \ar[r,"\d"] &  \Omega^1_j \\
+        even & C^\infty \ar[r,"\d"] & \Omega^1_{\d^{-1}F} \\
+        even & & C^\infty_{\d^{-1} H} \\
+        even & \Vect \ar[r,"L_{(-)} g"] & \Gamma\left(\Sym^2(\T^*)\right)_T \\
+        odd & \Gamma(\cS) \ar[r,"\nabla"] & \Omega^1 (\cS)
+    \end{tikzcd}
+\end{equation}
 
 \subsection{Supersymmetry for factorization algebras}
 
@@ -119,6 +138,123 @@ There is a quasi-isomorphism of local Lie algebras on the site of THF manifolds
 \left(\lie{J}_{\cN=4}\right)^{Q_{HT}} \simeq \cA^\bu(\T^{1|1}) . 
 \eeqn
 \end{thm}
+
+\section{Holomorphic-topological factorization algebras}
+
+\begin{dfn}
+Let $M$ be a THF three-manifold and let $\cF$ be a factorization algebra on $M$.
+A \defterm{THF structure} on $\cF$ is a map of factorization algebras
+\beqn
+\UU \cT \to \cF .
+\eeqn 
+\end{dfn}
+
+\begin{prop}
+\end{prop}
+
+\section{Free hyper}
+
+Suppose that $V$ is a vector space with a linear symplectic structure $\omega \in \wedge^2 V^*$.
+From $V$ we can associate an $\EE_1$-chiral algebra $\cA_V$ whose underlying graded vector space is
+\beqn
+\cA_V = \cO\left(V[[z]][\ep]\right) .
+\eeqn
+Here, $\ep$ is a formal variable of cohomological degree one.
+In physics terminology, $\cA_V$ is the algebra of local operators in the minimal twist of the $\cN=4$ hypermultiplet with values in $V$.
+We can forget the chiral structure and view $\cA_V$ simply as an associative algebra.
+This associative algebra structure is (graded) commutative, being the obvious one on the (graded) symmetric algebra of polynomials on $V[[z]][\ep]$.
+
+Notice that $V[[z]][\ep] = \cO(D^{1|1}) \otimes V$ is a representation of the Lie algebra of super/graded vector fields on the super/graded disk $D^{1|1}$ in the way that vector fields act as functions.
+Let $\cA^S_V$ be the deformation of $\cA_V$ with respect to the Maurer--Cartan element $z \frac{\del}{\del \eps}$.
+
+On to the actual construction. 
+Let $\cA$ be the de Rham--Dolbeault complex of $\R \times \C$.
+Consider 
+\beqn
+\cL_V = \cA \otimes V^*[\ep][-1]
+\eeqn
+as an abelian local Lie algebra where $\ep$ is a formal variable of cohomological degree $1$.
+The local Lie algebra $\cL_V$ is equipped with the following local cocycle
+\beqn
+\phi_\omega = \int_{\R \times \C} \omega^{-1}(\alpha, \alpha') ,
+\eeqn
+where $\omega^{-1}$ is the inverse symplectic form on $V^*$ and where we have written sections as $\alpha + \eps \alpha'$.
+Let $\cA_V$ be the factorization algebra on $\R \times \C$ obtained as the enveloping factorization algebra of this local Lie algebra twisted by $\phi_\omega$
+\beqn
+\cA_V \define \U^{fact}_{\phi_\omega} \left(\cL_V \right) .
+\eeqn
+Explicitly, if $U \subset \R \times \C$ then this factorization algebra assigns the cochain complex
+\beqn
+\cA_V(I \times U) = \left(\Sym\left(\cA_c (U) \otimes V^* [\ep]\right) \; , \; \d_{dR} + \dbar + \phi_{\omega} \right) ,
+\eeqn
+where $\d_{dR}$ is the de Rham differential acting on forms on $\R$.
+
+Let $\cL_V^S$ be the deformed local Lie algebra which we obtain from $\cL_V$ by deforming the differential
+\beqn
+\d_{dR} + \dbar \rightsquigarrow \d_{dR} + \dbar + S = \d_{dR} + \dbar + z \frac{\del}{\del \ep} .
+\eeqn
+
+\begin{lem}
+$\phi_\omega$ is a local cocycle for $\cL_V^S$.
+\end{lem}
+
+Define the resulting deformed factorization algebra
+\beqn
+\cA^S_V \define \U^{fact}_{\phi_\omega} \left(\cL_V \right) .
+\eeqn
+Explicitly, if $U \subset \R \times \C$ then this factorization algebra assigns the cochain complex
+\beqn
+\cA^S_V(I \times U) = \left(\Sym\left(\cA_c (U) \otimes V^* [\ep]\right) \; , \; \d_{dR} + \dbar + S + \phi_{\omega} \right) .
+\eeqn
+
+Finally, we define the relevant one-dimensional factorization algebra.
+Consider the abelian local Lie algebra $\Omega^\bu_\R \otimes V[-1]$ on $\R$ and the local cocycle
+\beqn
+\phi^{1d}_{\omega} = \int_{\R} \omega^{-1}(\alpha, \alpha) .
+\eeqn
+Let $\cA^{1d}_V$ be the twisted enveloping factorization algebra
+\beqn
+\cA^\star_V \define \U^{fact}_{\phi^{1d}_{\omega}} \left(\Omega^\bu_\R \otimes V [-1]\right) .
+\eeqn
+As an associative algebra one has $\cA_V^{1d} \simeq \cO_{\star}(V)$ equipped with its Moyal $\star$-product.
+
+\begin{prop}
+Let $\pi \colon \R \times \C \to \R$ be projection.
+There is a quasi-isomorphism
+\beqn
+\cA_V^{\star} \xto{\simeq} \pi_* \cA_V^S 
+\eeqn
+of factorization algebras on $\R$.
+\end{prop}
+\begin{proof}
+We first define the linearized map of cosheaves of
+\beqn
+\Phi \colon \Omega^\bu_{\R,c} \otimes V \to \pi_* \cA_{c} \otimes V ,
+\eeqn
+where the right hand side is equipped with the differential $\d_{dR} + \dbar + S$.
+Suppose $I \subset \R$ is an interval and let $\alpha \in \Omega^\bu_c \otimes V$ be a $V$-valued compactly supported form on $I$.
+Let $\rho$ be a radially symmetric bump function on $\C$ centered at $0$.
+Define
+\beqn
+\Phi (\alpha) = \rho \pi^* \alpha - \ep \frac{\dbar \rho}{z} \pi^* \alpha \in \cA^\bu(\pi^{-1}(I)) \otimes V [\ep] .
+\eeqn
+It is clear that $\Phi$ commutes with the de Rham differential $\d_{dR}$.
+On the other hand
+\beqn
+(\dbar + S) \Phi(\alpha) = (\dbar \rho) \pi^* \alpha - (\dbar \rho) \pi^* \alpha = 0 .
+\eeqn
+Thus, $\Phi$ is a cochain map.
+We observe that $\Phi$ is a quasi-isomorphism of cosheaves (this is Serre dual to the usual Koszul resolution for $0 \in \C$).
+
+We extend $\Phi$ to $\cA_V^{1d}(I)$ so that it is a map of underlying graded commutative algebras.
+To see that $\Phi$ is a map of factorization algebras, we only need to verify that it intertwines the local cocycles $\phi_{\omega}$ and $\phi_{\omega}^{1d}$.
+This is direct computation:
+\begin{multline}
+\int_{\R \times \C} \omega^{-1} \left(\rho \pi^* \alpha - \ep \frac{\dbar \rho}{z} \pi^* \alpha, \rho \pi^* \alpha - \ep \frac{\dbar \rho}{z} \pi^* \alpha\right) = \# \int_\R \omega^{-1}(\alpha, \alpha) .
+\end{multline}
+There's a number here that only changes the definition of $\phi^{1d}_\omega$, which is not that important here.
+\end{proof}
+
 
 \printbibliography
 
